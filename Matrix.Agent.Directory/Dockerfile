@@ -14,7 +14,7 @@ COPY Matrix.Agent.Directory.Model/Matrix.Agent.Directory.Model.csproj Matrix.Age
 COPY . .
 
 # restore
-RUN dotnet restore "Matrix.Agent.Directory/Matrix.Agent.Directory.csproj"
+RUN dotnet restore "Matrix.Agent.Directory/Matrix.Agent.Directory.csproj" -s http://nuget.matrix.paramg.com:8888/v3/index.json
 
 # build
 WORKDIR /src/Matrix.Agent.Directory
